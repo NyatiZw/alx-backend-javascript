@@ -1,4 +1,4 @@
-export default function handleResponseFromAPI(promise) {
+function handleResponseFromAPI(promise) {
 	return promise
 	.then((response) => {
 		// Check the condition and resolve or reject accordingly
