@@ -1,6 +1,6 @@
 export default function getResponseFromAPI() {
 	return new Promise((resolve, reject) => {
-		setTimer(() => {
+		setTimeout(() => {
 			const randomValue = Math.random();
 
 			if (randomValue < 0.7) {
