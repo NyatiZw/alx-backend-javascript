@@ -24,13 +24,13 @@ export default class Pricing {
 
 
 	set currency(newCurrency) {
-		if (typeof newCurrency === 'string') {
+		if (newCurrency instanceof Currency) {
 			this._currency = newCurrency;
 		}
 	}
 
 	displayFullPrice() {
-		console.log(`${this._amount} ${this._currency}`);
+		return `${this._amount} ${this._currency._name} (${this._currency._code})`;
 	}
 
 	static convertPrice(amount, conversionRate) {
