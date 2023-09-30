@@ -37,13 +37,15 @@ class Car {
 
 
 	set color(newColor) {
-		if (typeof newColor == 'string') {
+		if (typeof newColor === 'string') {
 			this._color = newColor; /*Update the property eith new value*/
 		}
 	}
 
+
 	cloneCar() {
-		return `TestCar { _brand: '${this._brand}', _motor: '${this._motor}', _color: '${this._color}'}`
+		/* New TestCar instance with the same properties as this instance*/
+		return new this.constructor();
 	}
 }
 
