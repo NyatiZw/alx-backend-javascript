@@ -1,3 +1,4 @@
+// 7-airport.js file
 class Airport {
 	constructor(name, code) {
 		this._name = name;
