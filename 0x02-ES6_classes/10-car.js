@@ -16,7 +16,7 @@ class Car {
 
 	set brand(newBrand) {
 		if (typeof newBrand === 'string') {
-			return this._brand;
+			this._brand = newBrand;
 		}
 	}
 
@@ -26,7 +26,7 @@ class Car {
 
 	set motor(newMotor) {
 		if (typeof newMotor === 'string') {
-			return this._motor;
+			this._motor = newMotor;
 		}
 	}
 
@@ -38,7 +38,7 @@ class Car {
 
 	set color(newColor) {
 		if (typeof newColor == 'string') {
-			return this._color;
+			this._color = newColor;
 		}
 	}
 
