@@ -16,7 +16,7 @@ class Car {
 
 	set brand(newBrand) {
 		if (typeof newBrand === 'string') {
-			this._brand = newBrand;
+			this._brand = newBrand; /* Update the property with new value*/
 		}
 	}
 
@@ -26,7 +26,7 @@ class Car {
 
 	set motor(newMotor) {
 		if (typeof newMotor === 'string') {
-			this._motor = newMotor;
+			this._motor = newMotor; /* Update the property with new value*/
 		}
 	}
 
@@ -38,12 +38,12 @@ class Car {
 
 	set color(newColor) {
 		if (typeof newColor == 'string') {
-			this._color = newColor;
+			this._color = newColor; /*Update the property eith new value*/
 		}
 	}
 
 	cloneCar() {
-		return `TestCar [{ _brand: '${this._brand}', _motor: '${this._motor}', _color: '${this._color}'}]`
+		return `TestCar { _brand: '${this._brand}', _motor: '${this._motor}', _color: '${this._color}'}`
 	}
 }
 
