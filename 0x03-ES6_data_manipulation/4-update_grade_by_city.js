@@ -1,4 +1,4 @@
-export default function updateStudentGradeByXity(studentList, city, newGradess) {
+export default function updateStudentGradeByCity(studentList, city, newGrades) {
 	// Create copy of student list first
 	const updatedStudents = [...studentList];
 
