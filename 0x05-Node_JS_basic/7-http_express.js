@@ -1,5 +1,3 @@
-#!/usr/bin/node
-
 const express = require('express');
 const fs = require('fs').promise;
 const path = require('path');
