@@ -33,4 +33,4 @@ async function main() {
 // Execute main
 
 
-module.exports = main();
+main();
