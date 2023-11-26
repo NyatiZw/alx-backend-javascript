@@ -5,4 +5,4 @@ function calculateNumber(a, b) {
 }
 
 
-module.exports = calculateNummber;
+module.exports = calculateNumber;
