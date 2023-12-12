@@ -9,7 +9,7 @@
 		"lint": "./nodee_modules/.bin/eslint",
 		"lint-all": "./node_modules/.bin/eslint [0-9]*.js",
 		"lint-fix-all": "./node_modules/.bin/eslint --fix [0-9]*.js",
-		"test": "node ./node_modules/mocha/bin/mocha --require babel-register --exit",
+		"test": "mocha 2-calcul_chai.test.js",
 		"dev": "nodmon --exec babel-node --presets babel-preset-env ./full_server/server.js ./database.csv"
 	},
 	"dependencies": {
@@ -19,12 +19,12 @@
 	"devDependencies": {
 		"babel-cli": "^6.26.0",
 		"babel-preset-env": "^1.7.0",
-		"nodemon": "^2.0.2",
+		"chai": "^4.3.10",
 		"eslint": "^6.4.0",
 		"eslint-plugin-import": "^2.18.2",
 		"eslint-plugin-jest": "^22.17.0",
-		"chai": "^4.2.0",
-		"mocha": "^6.2.2"
+		"mocha": "^6.2.2",
+		"nodemon": "^2.0.2"
 	},
 	"repository": {
 		"type": "git",
