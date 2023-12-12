@@ -6,10 +6,10 @@
 	"private": true,
 	"license": "MIT",
 	"scripts": {
-		"lint": "./nodee_modules/.bin/eslint",
+		"lint": "./node_modules/.bin/eslint",
 		"lint-all": "./node_modules/.bin/eslint [0-9]*.js",
 		"lint-fix-all": "./node_modules/.bin/eslint --fix [0-9]*.js",
-		"test": "mocha 4-payment.test.js",
+		"test": "mocha 5-payment.test.js",
 		"dev": "nodemon --exec babel-node --presets babel-preset-env ./full_server/server.js ./database.csv"
 	},
 	"dependencies": {
