@@ -1,5 +1,4 @@
 const fs = require('fs');
-
 /**
  * Count the number in the CSV file
  * @param {string} path - path to the CSV file.
