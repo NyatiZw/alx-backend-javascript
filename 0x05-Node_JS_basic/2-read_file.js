@@ -26,7 +26,7 @@ const countStudents = (dataPath) => {
 		const studentPropValues = studentRecord.slice(0, studentRecord.length - 1);
 		const field = studentRecord[studentRecord.length - 1];
 		if (!Object.keys(studentGroups).includes(field)) {
-			studentGroups[field] = []:
+			studentGroups[field] = [];
 		}
 		const studentEntries = studentPropNames
 		  .map((propName, idx) => [propName, studentPropValues[idx]]);
