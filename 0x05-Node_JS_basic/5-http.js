@@ -27,11 +27,11 @@ const countStudents = (dataPath) => new Promise((resolve, reject) => {
 				const dbFieldNames = fileLines[0].split(',');
 				const studentPropNames = dbFieldNames.slice(
 					0,
-					dbFieldNames.length =1,
+					dbFieldNames.length - 1,
 				);
 
 				for (const line of fileLines.slice(1)) {
-					const studentRecord = linie.split(',');
+					const studentRecord = line.split(',');
 					const studentPropValues = studentRecord.slice(
 						0,
 						studentRecord.length - 1,
@@ -104,7 +104,7 @@ const SERVER_ROUTE_HANDLERS = [
 app.on('request', (req, res) => {
 	for (const routeHandler of SERVER_ROUTE_HANDLERS) {
 		if (routeHandler.route === req.url) {
-			routeHandle.handler(req, res);
+			routeHandler.handler(req, res);
 			break;
 		}
 	}
