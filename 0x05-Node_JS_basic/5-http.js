@@ -11,7 +11,7 @@ const DB_FILE = process.argv.length > 2 ? process.argv[2] : '';
  * @param {String} dataPath to the CSV data file
  */
 const countStudents = (dataPath) => new Promise((resolve, reject) => {
-	if (!dataPAth) {
+	if (!dataPath) {
 		reject(new Error('Cannot load the database'));
 	}
 	if (dataPath) {
@@ -19,6 +19,7 @@ const countStudents = (dataPath) => new Promise((resolve, reject) => {
 			if (err) {
 				reject(new Error('Cannot load the database'));
 			}
+
 			if (data) {
 				const reportParts = [];
 				const fileLines = data.toString('utf-8').trim().split('\n');
