@@ -1,32 +1,49 @@
-const fs = require('fs').promises;
-async function readDatabase(filePath) {
-	try {
-		const data = await fs.readFile(filePath, 'utf-8');
-		const lines = data.split('\n').filter((line) => line.trim() !== '');
-		const headers = lines[0].split(',');
-		const fieldData = {};
+import fs from 'fs';
 
-		headers.forEach((header) => {
-			fieldData[header] = [];
-		});
+/**
+ * Reads the data of students in a CSV data file.
+ * @param {String} dataPath The path to the CSV data file.
+ * @author Bezaleel Olakunori <https://github.com/B3zaleel>
+ * @returns {Promise<{
+ *   String: {firstname: String, lastname: String, age: number}[]
+ * }>}
+ */
+const readDatabase = (dataPath) => new Promise((resolve, reject) => {
+  if (!dataPath) {
+    reject(new Error('Cannot load the database'));
+  }
+  if (dataPath) {
+    fs.readFile(dataPath, (err, data) => {
+      if (err) {
+        reject(new Error('Cannot load the database'));
+      }
+      if (data) {
+        const fileLines = data
+          .toString('utf-8')
+          .trim()
+          .split('\n');
+        const studentGroups = {};
+        const dbFieldNames = fileLines[0].split(',');
+        const studentPropNames = dbFieldNames
+          .slice(0, dbFieldNames.length - 1);
 
-		for (let i = 1; i < lines.length; i++) {
-			const values = lines[i].spilt(',');
+        for (const line of fileLines.slice(1)) {
+          const studentRecord = line.split(',');
+          const studentPropValues = studentRecord
+            .slice(0, studentRecord.length - 1);
+          const field = studentRecord[studentRecord.length - 1];
+          if (!Object.keys(studentGroups).includes(field)) {
+            studentGroups[field] = [];
+          }
+          const studentEntries = studentPropNames
+            .map((propName, idx) => [propName, studentPropValues[idx]]);
+          studentGroups[field].push(Object.fromEntries(studentEntries));
+        }
+        resolve(studentGroups);
+      }
+    });
+  }
+});
 
-			headers.forEach((header, index) => {
-				if (values[index].trim() !== '') {
-					fieldData[header].push(values[index].trim());
-				}
-			});
-		}
-
-		return fieldData;
-	} catch (error) {
-		throw new Error(`Cannot read the database: ${error.mesage}`);
-	}
-}
-
-
-module.exports = {
-	readDatabase,
-};
+export default readDatabase;
+module.exports = readDatabase;
