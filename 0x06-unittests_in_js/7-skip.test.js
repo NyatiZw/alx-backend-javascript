@@ -1,3 +1,5 @@
+// 7-skip.test
+
 const { expect } = require('chai');
 
 describe('Testing numbers', () => {
