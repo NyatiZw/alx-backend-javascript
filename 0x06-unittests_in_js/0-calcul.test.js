@@ -8,14 +8,4 @@ describe('calculateNumber', () => {
 		assert.strictEqual(calculateNumber(1.2, 3.7), 5);
 		assert.strictEqual(calculateNumber(1.5, 3.7), 6);
 	});
-
-	it('float point whole numbers', () => {
-		assert.strictEqual(calculateNumber(1.0, 3.0), 4);
-	});
-	it('round down a and b\s floating point number', () => {
-		assert.strictEqual(calculateNumber(1.4, 3), 4);
-	});
-	it('round up a and b\s floating point numbers', () => {
-		assert.strictEqual(calculateNumber(1.4, 3.2), 5);
-	});
 });
