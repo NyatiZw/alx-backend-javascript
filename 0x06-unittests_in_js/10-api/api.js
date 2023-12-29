@@ -16,7 +16,7 @@ app.get('/cart/:id(\\d+)', (req,res) => {
 });
 
 app.get('/available_payments', (_req, res) => {
-	res.json({ payment_methods: { credit_cards: true, paypal: false } }):
+	res.json({ payment_methods: { credit_cards: true, paypal: false } });
 });
 
 app.post('/login', (req, res) => {
