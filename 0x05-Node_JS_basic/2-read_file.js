@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 /**
  * Count the number in the CSV file
  * @param {string} path - path to the CSV file.
@@ -9,7 +10,7 @@ const countStudents = (dataPath) => {
 		throw new Error('Cannot load the database');
 	}
 	if (!fs.statSync(dataPath).isFile()) {
-		throw new Error('Cannot Load database');
+		throw new Error('Cannot load database');
 	}
 	const fileLines = fs
 	  .readFileSync(dataPath, 'utf-8')
